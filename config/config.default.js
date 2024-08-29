@@ -31,19 +31,19 @@ module.exports = appInfo => {
   };
   
 
-  const mysql = {
+  config.mysql = {
     client: {
       host: '47.113.228.135',
       port: '3306',
       user: 'chenwq',
-      password: '******',
+      password: '123123!',
       database: 'my_egg_db',
     },
     app: true,
     agent: false,
   };
 
-  const multipart = {
+  config.multipart = {
     mode: 'file',
     whitelist: () => true, // 允许所有文件类型（根据需要调整）
     tmpdir: path.join(__dirname, '../tmp'), // 指定文件上传的临时存储目录，当文件上传完成后，可以选择将文件从临时目录移动到最终存储目录（uploadDir）。
@@ -52,8 +52,6 @@ module.exports = appInfo => {
 
   return {
     ...config,
-    ...userConfig,
-    ...mysql,
-    multipart
+    ...userConfig
   };
 };

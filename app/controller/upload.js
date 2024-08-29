@@ -6,9 +6,9 @@ const path = require('path');
 
 class UploadController extends Controller {
   async upload() {
-    const { ctx } = this;
+    const { ctx, app } = this;
+
     const file = ctx.request.files[0];
-    console.log(1111111, file);
     // 确保上传的文件存在
     if (!file) {
       ctx.throw(400, 'No file uploaded');
@@ -24,6 +24,12 @@ class UploadController extends Controller {
       
       // 设置文件的访问 URL
       const fileUrl = `/public/uploads/${filename}`;
+
+       // 将文件信息保存到数据库
+      await app.mysql.insert('files', {
+        filename: filename,
+        filepath: fileUrl,
+      });
       
       // 返回成功响应
       ctx.body = { url: fileUrl, message: 'File uploaded successfully' };
