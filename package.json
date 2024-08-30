@@ -24,8 +24,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-my-egg-project",
-    "stop": "egg-scripts stop --title=egg-server-my-egg-project",
+    "start": "sudo egg-scripts start --daemon --title=egg-server-my-egg-project",
+    "stop": "sudo egg-scripts stop --title=egg-server-my-egg-project",
     "restart": "npm run stop && npm run start",
     "dev": "egg-bin dev",
     "test": "npm run lint -- --fix && npm run test:local",
