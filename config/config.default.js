@@ -36,7 +36,7 @@ module.exports = appInfo => {
       host: '47.113.228.135',
       port: '3306',
       user: 'chenwq',
-      password: '123123!',
+      password: '123123123',
       database: 'my_egg_db',
     },
     app: true,
