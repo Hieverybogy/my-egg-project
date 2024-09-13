@@ -62,6 +62,12 @@ module.exports = appInfo => {
     consoleLevel: 'DEBUG', // 控制台日志级别
   };
 
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
 
   return {
     ...config,
