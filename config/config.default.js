@@ -50,6 +50,11 @@ module.exports = appInfo => {
     uploadDir: path.join(__dirname, '../app/public/uploads'), // 文件保存路径
   };
 
+  config.static = {
+    prefix: '/public/', // URL 前缀
+    dir: path.join(appInfo.baseDir, 'app/public'), // 静态文件目录
+  };
+
   return {
     ...config,
     ...userConfig
