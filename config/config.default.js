@@ -55,6 +55,14 @@ module.exports = appInfo => {
     dir: path.join(appInfo.baseDir, 'app/public'), // 静态文件目录
   };
 
+  // 日志配置
+  config.logger = {
+    dir: path.join(appInfo.baseDir, 'logs'), // 日志目录
+    level: 'INFO', // 日志级别
+    consoleLevel: 'DEBUG', // 控制台日志级别
+  };
+
+
   return {
     ...config,
     ...userConfig
